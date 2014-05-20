@@ -4,7 +4,7 @@
 
 ## The first function, makeCacheMatrix, creates a special "matrix", which is really 
 ## a list containing methods to
-##  set the the matrix
+##  set the matrix
 ##  get the matrix
 ##  set the inverse of the matrix
 ##  get the inverse of the matrix
