@@ -1,13 +1,13 @@
 ##  Below are a pair of functions that are used to create a special object that stores 
-##  a square matrix and cache's its inverse.
+##  a square matrix and caches its inverse.
 
 
 ## The first function, makeCacheMatrix, creates a special "matrix", which is really 
-## a list containing a function to
-##  set the value of the matrix
-##  get the value of the matrix
-##  set the value of its inverse
-##  get the value of its inverse
+## a list containing methods to
+##  set the the matrix
+##  get the matrix
+##  set the inverse of the matrix
+##  get the inverse of the matrix
 
 makeCacheMatrix <- function(x = matrix()) {
         im <- NULL
@@ -33,12 +33,11 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-        if x == x$get() {
-                im <- x$get_inverseMatrix()
-                if(!is.null(im)) {
-                        message("getting cached inverseMatrix")
-                        return(im)
-        }        }
+        im <- x$get_inverseMatrix()
+        if(!is.null(im)) {
+                message("getting cached inverseMatrix")
+                return(im)
+        }        
         m <- x$get()
         im <- solve(m)
         x$set_inverseMatrix(im)
